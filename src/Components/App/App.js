@@ -16,6 +16,20 @@ function App() {
     .then(data => setBots(data))
   },[]) 
 
+  function deleteBot(id){
+    const bot = bots.filter(robot => robot.id !== id)
+    setBots(bot)
+    const robot = enlisted.filter(item => item.id !== id)
+    setEnlisted(robot)
+    fetch(`http://localhost:8001/bots/${id}`,{
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application.json'
+      }
+    })
+    .then(r => r.json())
+  }
+
   function EnlistBot(bot_id){
     const bot = bots.filter((profile) => profile.id === bot_id)
     const [robot] = bot
@@ -31,11 +45,12 @@ function App() {
       setEnlisted(newArray)
   }
 
+
   return (
     <div className="App">
       <Navbar/>
       <EnlistedBots enlisted={enlisted} deListBot={deListBot}/>
-      <DisplayBots bot={bots} EnlistBot={EnlistBot}/>
+      <DisplayBots bot={bots} EnlistBot={EnlistBot} deleteBot={deleteBot}/>
     </div>
   );
 }

@@ -1,17 +1,23 @@
 import React from "react"
 import BotCard from "../Card/botcard"
 
-export default function DisplayBots({bot, EnlistBot}){
+export default function DisplayBots({bot, EnlistBot, deleteBot}){
 
     function addBots(id){
         EnlistBot(id)
+    }
+
+    function deleteRobot(id){
+        deleteBot(id)
     }
 
     return (
         <div className="displaybots row">
             {bot.map((profile) => {
                 return (
-        <BotCard addBots={addBots} 
+        <BotCard 
+        addBots={addBots} 
+        deleteRobot={deleteRobot}
         key={profile.id} 
         bot_id={profile.id} 
         bot_name={profile.name} 
