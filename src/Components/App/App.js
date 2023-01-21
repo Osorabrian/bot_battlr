@@ -15,11 +15,15 @@ function App() {
     .then(data => setBots(data))
   },[]) 
 
+  function EnlistBot(bot_id){
+    console.log(bot_id)
+  }
+
   return (
     <div className="App">
       <Navbar/>
       <EnlistedBots/>
-      <DisplayBots bot={bots}/>
+      <DisplayBots bot={bots} EnlistBot={EnlistBot}/>
     </div>
   );
 }

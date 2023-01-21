@@ -1,8 +1,13 @@
 import React from "react";
 
-export default function BotCard({bot_name,catch_phrase,bot_class,bot_image}){
+export default function BotCard({bot_id,bot_name,catch_phrase,bot_class,bot_image,addBots}){
+
+    function handleClick(){
+        addBots(bot_id)
+    }
+
     return (
-    <div className="card col-2 ms-4 me-2 mt-2 h-50" >
+    <div className="card col-2 ms-4 me-2 mt-2 h-50" onClick={() => {handleClick()}}>
         <img src={bot_image} className="card-img-top" alt={bot_name} />
         <div className="card-body">
             <h5 className="card-title">{bot_name}</h5>
