@@ -10,8 +10,18 @@ export default function EnlistedBots({enlisted, deListBot}){
     
     const enlist = enlisted.map((profile) => {
         return (
-        <EnlistedBotCard removeBot={removeBot} key={profile.id} bot_id={profile.id} bot_name={profile.name} catch_phrase={profile.catchphrase} bot_class={profile.bot_class} bot_image={profile.avatar_url} />
+        <EnlistedBotCard removeBot={removeBot} 
+        key={profile.id} 
+        bot_id={profile.id} 
+        bot_name={profile.name} 
+        catch_phrase={profile.catchphrase} 
+        bot_class={profile.bot_class} 
+        bot_image={profile.avatar_url}
+        bot_health={profile.health}
+        bot_damage={profile.damage}
+        bot_armor={profile.armor}/>
         )})
+
     return (
         <div className="enlisted-bots row">
             {enlist}
