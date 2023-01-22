@@ -11,7 +11,7 @@ function App() {
   const [enlisted, setEnlisted] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:8001/bots")
+    fetch("https://json-server-vercel1-mocha.vercel.app/bots")
     .then(response => response.json())
     .then(data => setBots(data))
   },[]) 
@@ -21,7 +21,7 @@ function App() {
     setBots(bot)
     const robot = enlisted.filter(item => item.id !== id)
     setEnlisted(robot)
-    fetch(`http://localhost:8001/bots/${id}`,{
+    fetch(`https://json-server-vercel1-mocha.vercel.app/bots/${id}`,{
       method: 'DELETE',
       headers: {
         'Content-Type': 'application.json'
