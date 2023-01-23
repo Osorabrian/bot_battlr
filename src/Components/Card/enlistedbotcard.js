@@ -25,8 +25,8 @@ export default function EnlistedBotCard({removeBot,bot_health,bot_damage,bot_arm
     }
 // create a bot card
     return (
-    <div className="card col-2 ms-4 me-2 mt-2 h-90 mb-1" onClick={() => {handleClick()}}>
-        <img src={bot_image} className="card-img-top" alt={bot_name} />
+    <div className="card col-2 ms-4 me-2 mt-2 h-90 mb-1" >
+        <img src={bot_image} className="card-img-top" alt={bot_name} onClick={() => {handleClick()}}/>
         <div className="card-body">
             <h5 className="card-title">{bot_name} {icon}</h5>
             <p className="card-text" style={{fontSize: "10px"}}>{catch_phrase}</p>

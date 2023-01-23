@@ -32,7 +32,7 @@ export default function BotCard({bot_id,bot_health,bot_damage,bot_armor
 // create a bot card
     return (
     <div className="card col-2 ms-4 me-2 mt-2 h-50" >
-        <img src={bot_image} className="card-img-top" alt={bot_name} />
+        <img src={bot_image} className="card-img-top" alt={bot_name} onClick={handleClick}/>
         <div className="card-body">
             <h5 className="card-title">{bot_name} {icon}</h5>
             <p className="card-text" style={{fontSize: "10px"}}>{catch_phrase}</p>
