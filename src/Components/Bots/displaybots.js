@@ -12,10 +12,11 @@ export default function DisplayBots({bot, EnlistBot, deleteBot}){
     function deleteRobot(id){
         deleteBot(id)
     }
-    
+
 // create bot card for every bot in the collection
     return (
         <div className="displaybots row">
+            <h2>Bot Collection</h2>
             {bot.map((profile) => {
                 return (
         <BotCard 
