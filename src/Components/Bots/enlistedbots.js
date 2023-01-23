@@ -24,7 +24,6 @@ export default function EnlistedBots({enlisted, deListBot}){
 
     return (
         <div className="enlisted-bots row">
-            <h2>Your Army</h2>
             {enlist}
         </div>
     )
