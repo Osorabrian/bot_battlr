@@ -7,15 +7,18 @@ import { useEffect, useState } from 'react';
 
 function App() {
 
+  // useState for bots and bots been enlisted
   const [bots, setBots] = useState([])
   const [enlisted, setEnlisted] = useState([])
 
+  // fetch data from json-server
   useEffect(() => {
     fetch("https://json-server-vercel1-mocha.vercel.app/bots")
     .then(response => response.json())
     .then(data => setBots(data))
   },[]) 
 
+  // function for deleting bots
   function deleteBot(id){
     const bot = bots.filter(robot => robot.id !== id)
     setBots(bot)
@@ -30,6 +33,7 @@ function App() {
     .then(r => r.json())
   }
 
+  // function for enlisting bot to your army
   function EnlistBot(bot_id){
     const bot = bots.filter((profile) => profile.id === bot_id)
     const [robot] = bot
@@ -40,6 +44,7 @@ function App() {
     }
   }
 
+  // function to delist bot from your army
   function deListBot(id){
       const newArray = enlisted.filter((robot) => robot.id !== id)
       setEnlisted(newArray)

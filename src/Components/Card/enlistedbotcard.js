@@ -3,10 +3,12 @@ import React from "react";
 export default function EnlistedBotCard({removeBot,bot_health,bot_damage,bot_armor,
     bot_id,bot_name,catch_phrase,bot_class,bot_image}){
 
+    // handle the click eventlistener
     function handleClick(){
         removeBot(bot_id)
     }
 
+    // icons irrespective of class
     let icon;
     if(bot_class === "Captain"){
         icon = <i className="fa-solid fa-jet-fighter"></i>
@@ -21,7 +23,7 @@ export default function EnlistedBotCard({removeBot,bot_health,bot_damage,bot_arm
     }else if(bot_class === "Assault"){
         icon = <i className ="fa-solid fa-gun"></i>
     }
-
+// create a bot card
     return (
     <div className="card col-2 ms-4 me-2 mt-2 h-90 mb-1" onClick={() => {handleClick()}}>
         <img src={bot_image} className="card-img-top" alt={bot_name} />
