@@ -17,6 +17,7 @@ export default function DisplayBots({bot, EnlistBot, deleteBot}){
     return (
         <div className="displaybots row">
             <h2>Bot Collection</h2>
+            <p>( Click on Bot avatar to enlist to your army and click on the red x button to delete from collection)</p>
             {bot.map((profile) => {
                 return (
         <BotCard 
